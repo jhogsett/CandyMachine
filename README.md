@@ -1,5 +1,5 @@
-# CandyMachine
- Arduino Based Candy Vending Machine
+# Behavior Modification Candy Machine
+ Arduino Based 3D Printed Candy Vending Machine
 
 [![Candy Machine](https://i.ytimg.com/vi/r2tifp0YCdo/maxresdefault.jpg)](https://youtube.com/shorts/r2tifp0YCdo "Candy Machine") 
 
