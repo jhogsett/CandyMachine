@@ -117,6 +117,16 @@ void calibrate_wheel(){
   myStepper.step(stepsPerRevolution);
 }
 
+#define PRE_RELEASE_DELAY 100
+
+void release_motor(){
+  delay(PRE_RELEASE_DELAY);
+  digitalWrite(MOTOR_PIN1, LOW);
+  digitalWrite(MOTOR_PIN2, LOW);
+  digitalWrite(MOTOR_PIN3, LOW);
+  digitalWrite(MOTOR_PIN4, LOW);
+}
+
 void sendData(int coinType){
   if(coinType == COIN_SPECIAL){
     calibrate_wheel();
@@ -145,6 +155,7 @@ void sendData(int coinType){
     int leap_step = wheel_segment == 0 ? 1 : 0;
     myStepper.step(STEPS_PER_SEGMENT - leap_step);
     delay(MULTI_PURCHASE_DELAY);
+    release_motor();
   }
 
   if(purchased) {
